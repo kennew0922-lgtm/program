@@ -175,7 +175,7 @@
             </tr>
             <tr>
                 <td>&ltbody&gt ～ &lt/body&gt</td>
-                <td><span class="key">ブラウザの画面に実際に表示されるすべてのコンテンツを入れる</span></td>
+                <td><span class="key">ブラウザの画面に実際に表示されるすべてのコンテンツを入れます。</span></td>
             </tr>
             <tr>
                 <td>&ltdiv&gt ～ &lt/div&gt</td>
@@ -191,7 +191,7 @@
             </tr>
             <tr>
                 <td>&ltp&gt ～ &lt/p&gt</td>
-                <td><span class="key">段落（Paragraph）を表す</span></td>
+                <td><span class="key">段落（Paragraph）を表します。</span></td>
             </tr>
             <tr>
                 <td>&lth1&gt 〜 &lth6&gt</td>
@@ -273,7 +273,7 @@
             </tr>
             <tr>
                 <td>&ltbutton&gt</td>
-                <td><span class="key">クリックしたくなるようなグラデーションや影（box-shadow）をつける</span></td>
+                <td><span class="key">クリックしたくなるようなグラデーションや影（box-shadow）をつけます。</span></td>
             </tr>
             <tr>
                 <td>&ltheader&gt ～ &lt/header&gt</td>
@@ -321,7 +321,7 @@
             </tr>
             <tr>
                 <td>console.log()</td>
-                <td><span class="key">出力。ブラウザの「検証ツール（コンソール）」に結果を表示します。デバッグの神。</span></td>
+                <td><span class="key">出力。ブラウザの「検証ツール（コンソール）」に結果を表示します。</span></td>
             </tr>
             <tr>
                 <td>document.querySelector()</td>
@@ -374,6 +374,22 @@
                 <td>""" コメント """</td>
                 <td><span class="key">複数行（ブロック）コメント</span></td>
             </tr>
+            <tr>
+                <td>print()"</td>
+                <td><span class="key">画面出力。<br>指定した文字や計算結果を画面に表示する。</span></td>
+            </tr>
+            <tr>
+                <td>変数名 = 値</td>
+                <td><span class="key">変数宣言。<br>データを一時的に保存する箱を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>input()</td>
+                <td><span class="key">キーボード入力。<br>画面からユーザーが文字を入力できるように待ち状態を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>if / elif / else</td>
+                <td><span class="key">条件分岐。<br>「もし〜ならA、別の条件ならB、それ以外ならC」と処理を分けます。</span></td>
+            </tr>
            
                     </tbody>
     </table>
@@ -390,8 +406,28 @@
                 <td><span class="key">1行コメント</span></td>
             </tr>
             <tr>
-                <td> /* コメント */</td>
+                <td>/* コメント */</td>
                 <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>System.out.println();</td>
+                <td><span class="key">画面出力。<br>指定した文字や計算結果を画面に表示して、最後に自動で改行します。</span></td>
+            </tr>
+            <tr>
+                <td>int / String </td>
+                <td><span class="key">データ型。<br>変数（箱）を作る時に、「数字を入れる箱（int）」や「文字を入れる箱（String）」のように、中身の種類をあらかじめカチッと指定します。</span></td>
+            </tr>
+            <tr>
+                <td>public static void main(String[] args) { ... } </td>
+                <td><span class="key">メインメソッド。<br>Javaのプログラムが起動したときに、一番最初に自動で実行される「魔法の発動陣（入り口）」です。</span></td>
+            </tr>
+            <tr>
+                <td>public static void main(String[] args) { ... } </td>
+                <td><span class="key">外部プログラムの読み込み。<br>キーボードから文字や数値を入力してもらうための「Scanner（スキャナー）」という道具を準備します。</span></td>
+            </tr>
+            <tr>
+                <td>if (条件) { ... } else { ... }</td>
+                <td><span class="key">条件分岐。<br>「もし〜ならA、それ以外ならB」と処理を分けます。<br>*条件式は必ず ( ) で囲みます。</span></td>
             </tr>
            
                     </tbody>
@@ -412,6 +448,26 @@
                 <td>/* コメント */</td>
                 <td><span class="key">複数行（ブロック）コメント</span></td>
             </tr>
+            <tr>
+                <td>std::cout << "文字列" << std::endl;</td>
+                <td><span class="key">画面出力。<br>指定した文字を画面に表示し、endl で自動改行します。</span></td>
+            </tr>
+            <tr>
+                <td>int main() { ... return 0; }</td>
+                <td><span class="key">メイン関数。<br>プログラムが起動したときに自動で実行される「魔法の発動口」です。<br>最後に return 0; を書いて正常終了させます。</span></td>
+            </tr>
+            <tr>
+                <td>#include &lt;iostream&gt</td>
+                <td><span class="key">外部機能の準備。<br>画面に文字を出したり（cout）、入力を受け取ったり（cin）するための基本道具箱をプログラムの先頭で読み込みます。</span></td>
+            </tr>
+            <tr>
+                <td>std::cin >> 変数名;</td>
+                <td><span class="key">キーボード入力。<br>ユーザーが画面から入力した文字や数値を、指定した変数（箱）の中に格納します。</span></td>
+            </tr>
+            <tr>
+                <td>using namespace std;</td>
+                <td><span class="key">名前空間の省略。<br>これをプログラムの最初に書いておくと、std::cout の「std::」を全部省略して、ただの cout や cin として書けるようになります。</span></td>
+            </tr>
            
                     </tbody>
     </table>
@@ -431,6 +487,26 @@
                 <td>=begin ... =end</td>
                 <td><span class="key">複数行（ブロック）コメント</span></td>
             </tr>
+            <tr>
+                <td>puts "文字列"</td>
+                <td><span class="key">画面出力。<br>指定した文字を画面に表示し、自動で改行します。</span></td>
+            </tr>
+            <tr>
+                <td>puts "変数名 = 値"</td>
+                <td><span class="key">変数宣言。<br>データを一時的に保存する箱を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>gets.chomp</td>
+                <td><span class="key">キーボード入力。<br>ユーザーが画面から入力した文字を受け取ります。<br>末尾の改行（Enterキーのデータ）を自動でカット（chomp）してくれます。</span></td>
+            </tr>
+            <tr>
+                <td># {変数名}</td>
+                <td><span class="key">式展開。<br>ダブルクォーテーション "" の文章の中に、変数の中身を直接埋め込む魔法です。</span></td>
+            </tr>
+            <tr>
+                <td>if 条件 ... end</td>
+                <td><span class="key">条件分岐。<br>「もし〜なら」という処理を作ります。</span></td>
+            </tr>
            
                     </tbody>
     </table>
@@ -449,6 +525,26 @@
             <tr>
                 <td>/* ... */</td>
                 <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>&lt?php ... ?&gt</td>
+                <td><span class="key">PHPの開始と終了。<br>HTMLの中にPHPのコード（魔法）を書き込むための「ここからココまでがPHPの範囲だよ」という境界線です。</span></td>
+            </tr>
+            <tr>
+                <td>echo "文字列";</td>
+                <td><span class="key">画面出力。<br>指定した文字やHTMLタグを画面（ブラウザ）に吐き出します。</span></td>
+            </tr>
+            <tr>
+                <td>$変数名 = 値;</td>
+                <td><span class="key">変数宣言。<br>データを保存する箱を作ります。<br>PHPの変数は、必ず頭に「$（ドルマーク）」をつけるルールです。</span></td>
+            </tr>
+            <tr>
+                <td>$_POST["名前"] / $_GET["名前"]</td>
+                <td><span class="key">フォームデータの受け取り。<br>Webサイトのお問い合わせフォームなどで、ユーザーが入力して送信ボタンを押した中身をキャッチします。</span></td>
+            </tr>
+            <tr>
+                <td>. （ドットによる文字列結合）</td>
+                <td><span class="key">文字列の結合。<br>文字と文字、または文字と変数の中身をガッチャンコと繋ぎ合わせます。</span></td>
             </tr>
            
                     </tbody>
@@ -491,7 +587,7 @@
             </tr>   
             <tr>
                 <td>[p]</td>
-                <td><span class="key">クリック待ち+改ページ<br>*ボタンの効果も消えます</span></td>
+                <td><span class="key">クリック待ち+改ページ<br>*ボタンの効果も消えます。</span></td>
             </tr>
             <tr>
                 <td>[l][cm]</td>
@@ -499,7 +595,7 @@
             </tr> 
             <tr>
                 <td>[l][er]</td>
-                <td><span class="key">クリック待ち+改ページ<br>*表示中のレイヤーのみ改行<br>&nbsp;&nbsp;ボタンの効果は残ります</span></td>
+                <td><span class="key">クリック待ち+改ページ<br>*表示中のレイヤーのみ改行<br>&nbsp;&nbsp;ボタンの効果は残ります。</span></td>
             </tr>  
             <tr>
                 <td>[l]</td>
@@ -537,6 +633,7 @@
             プログラムがあまり得意でない方でもゲーム作成できるように、ティラノビルダーも用意されています。<br>
             JavaScriptを組み合わせることでアプリ開発もできる非常に便利なエンジンです。<br>
             詳しくは<a href="https://tyrano.jp/" target="_blank" rel="noopener noreferrer" style="color: #ffd700;">公式ページ</a>を参照してください。<br>
+            *Socrariusのサブシステムはティラノスクリプトで制作していますので、意外と簡単に改造できるようになっています。
 
             <br><br>
 
