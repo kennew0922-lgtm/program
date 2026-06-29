@@ -1,3 +1,898 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAM CODE DICTIONARY</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background: rgba(0, 5, 15, 0.9);
+            color: #e0f7ff;
+            font-family: 'Consolas', monospace;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+                /* 🌸 上部固定バナー */
+        .system-banner {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            height: 40px;
+            background: rgba(0, 35, 76, 1);
+            /*border-bottom: 1px solid #00f2fe;*/
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+                /* 🌸 セクションタイトル（追加） */
+        .section-title {
+            background: #000;
+            color: #00f2fe;
+            padding: 8px 15px;
+            margin: 15px 0 15px 0;
+            font-size: 11px;
+            font-weight: bold;
+            border-left: 4px solid #00f2fe;
+            letter-spacing: 2px;
+            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
+            /* 🌸 セクションタイトル（追加） */
+        .end-title {
+            background: #000;
+            color: #9a1517;
+            padding: 8px 15px;
+            margin: 15px 0 15px 0;
+            font-size: 11px;
+            font-weight: bold;
+            border-left: 4px solid #e78485;
+            letter-spacing: 2px;
+            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
+
+/* 🌸 ランチャーグリッド（アイコン密度を最適化） */
+.launcher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
+    gap: 8px; 
+    margin-bottom: 30px;
+}
+
+/* 🌸 ベースとなるカード設定（共通） */
+.memory-card {
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    display: block;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* 🌸 ランチャー用（正方形）の個別調整 */
+.launcher-card {
+    padding: 3px; 
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🌸 ホバー時のエフェクト：光と拡大 */
+.memory-card:hover {
+    border-color: #00f2fe;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    transform: scale(1.15); /* 60%サイズに合わせて程よい拡大に ✨ */
+    z-index: 10;
+}
+
+/* 🌸 アイコン画像の収まり設定 */
+.launcher-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+        /* --- コンテンツエリア --- */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            /* 35px(バナー) + 20px(余白) = 55px */
+            padding-top: 20px; 
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2b2b2b;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            letter-spacing: 0.05em;
+        }
+
+        /* --- 🌸 見出しの固定設定（バナーのすぐ下） --- */
+        th {
+            background-color: #00234c;
+            color: white;
+            position: sticky;
+            top: 0px; /* バナーの高さ分だけ下げる */
+            z-index: 100;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- 🌸 デザインの微調整 --- */
+        td {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #333333;
+        }
+
+        tbody tr:hover {
+            background-color: #3a3a3a;
+        }
+
+        .key {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+                /* カスタムスクロールバー */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #345485; }
+    </style>
+</head>
+<body>
+
+    <div class="system-banner">
+        PROGRAM CODE DICTIONARY
+    </div>
+        <br>
+            <!-- 🌸 ランチャーセクション -->
+<div class="container">
+
+<div class="section-title">HTML CODE</div>
+
+<a href="https://ja.wikipedia.org/wiki/HyperText_Markup_Language" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner1.png" width="720px"><a>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>&lt;!-- コメント --&gt</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>&lthtml&gt ～ &lt/html&gt</td>
+                <td><span class="key">すべてのHTML要素を包む「ルート（根）」となるタグ</span></td>
+            </tr>
+            <tr>
+                <td>&lthead&gt ～ &lt/head&gt</td>
+                <td><span class="key">画面には見えない設定情報を記述</span></td>
+            </tr>
+            <tr>
+                <td>&ltbody&gt ～ &lt/body&gt</td>
+                <td><span class="key">ブラウザの画面に実際に表示されるすべてのコンテンツを入れます。</span></td>
+            </tr>
+            <tr>
+                <td>&ltdiv&gt ～ &lt/div&gt</td>
+                <td><span class="key">コンテンツをグループ化するための汎用的なコンテナ</span></td>
+            </tr>
+            <tr>
+                <td>&lta href="https://example/">text&lt/a&gt</td>
+                <td><span class="key">他のページやファイルへ移動するためのハイパーリンクを作成</span></td>
+            </tr>
+            <tr>
+                <td>target="_blank" rel="noopener noreferrer"</td>
+                <td><span class="key">ハイパーリンクを別のウィンドウ（またはタブ）で開く</span></td>
+            </tr>
+            <tr>
+                <td>&ltp&gt ～ &lt/p&gt</td>
+                <td><span class="key">段落（Paragraph）を表します。</span></td>
+            </tr>
+            <tr>
+                <td>&lth1&gt 〜 &lth6&gt</td>
+                <td><span class="key">見出し</span></td>
+            </tr>
+            <tr>
+                <td>&ltimg src="example.jpg" alt="example"&gt</td>
+                <td><span class="key">画像を表示</span></td>
+            </tr>
+            <tr>
+                <td>&ltul&gt ～ &lt/ul&gt</td>
+                <td><span class="key">箇条書き（リスト）を作成</span></td>
+            </tr>
+            <tr>
+                <td>&ltli&gt ～ &lt/li&gt</td>
+                <td><span class="key">箇条書き（リスト）を作成</span></td>
+            </tr>
+            <tr>
+                <td>&ltbr&gt</td>
+                <td><span class="key">改行</span></td>
+            </tr>
+            <tr>
+                <td><pre>&amp;nbsp;</pre></td>
+                <td><span class="key">スペース半角</span></td>
+            </tr>
+            <tr>
+                <td><pre>&amp;ensp;</pre></td>
+                <td><span class="key">スペース半角と全角の間</span></td>
+            </tr>
+             <tr>
+                <td><pre>&amp;emsp;</pre></td>
+                <td><span class="key">スペース全角</span></td>
+            </tr>
+            <tr>
+                <td><pre>&amp;thinsp;</pre></td>
+                <td><span class="key">スペース特大</span></td>
+            </tr>
+                    </tbody>
+    </table>
+
+<br><br>
+
+<div class="section-title">CSS CODE</div>
+<a href="https://ja.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner2.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>/* コメント */</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>&ltdiv&gt ～ &lt/div&gt</td>
+                <td><span class="key">中身をグループ化して、レイアウトを作るための箱</span></td>
+            </tr>
+            <tr>
+                <td>&ltspan&gt ～ &lt/span&gt</td>
+                <td><span class="key"> 文中の一部（特定の単語だけ赤くするなど）をピンポイントで装飾する時に使用</span></td>
+            </tr>
+            <tr>
+                <td>&lta href="https://example/">text&lt/a&gt<</td>
+                <td><span class="key">他のページやファイルへ移動するためのハイパーリンクを作成</span></td>
+            </tr>
+            <tr>
+                <td>&ltimg&gt</td>
+                <td><span class="key">画像を表示</span></td>
+            </tr>
+            <tr>
+                <td>&ltul&gt ～ &lt/ul&gt</td>
+                <td><span class="key">箇条書き（リスト）を作成</span></td>
+            </tr>
+            <tr>
+                <td>&ltli&gt ～ &lt/li&gt</td>
+                <td><span class="key">箇条書き（リスト）を作成</span></td>
+            </tr>
+            <tr>
+                <td>&ltp&gt ～ &lt/p&gt</td>
+                <td><span class="key">文字の大きさ、行間（line-height）、余白（margin）の調整</span></td>
+            </tr>
+            <tr>
+                <td>&ltbutton&gt</td>
+                <td><span class="key">クリックしたくなるようなグラデーションや影（box-shadow）をつけます。</span></td>
+            </tr>
+            <tr>
+                <td>&ltheader&gt ～ &lt/header&gt</td>
+                <td><span class="key">ヘッダーを作るための箱</span></td>
+            </tr>
+            <tr>
+                <td>&ltfooter&gt ～ &lt/footer&gt</td>
+                <td><span class="key">フッダーを作るための箱</span></td>
+            </tr>
+            <tr>
+                <td>&ltsection&gt ～ &lt/section&gt</td>
+                <td><span class="key">セクションを作るための箱</span></td>
+            </tr>
+
+                    </tbody>
+    </table>
+
+
+<br><br>
+
+<div class="section-title">JAVASCRIPT CODE</div>
+<a href="https://ja.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner3.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>// コメント</td>
+                <td><span class="key">1行コメント</span></td>
+            </tr>
+            <tr>
+                <td>/* コメント */</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>&ltscript&gt ～ &lt/script&gt</td>
+                <td><span class="key">JavaScriptを動かすための唯一のタグ</span></td>
+            </tr>
+             <tr>
+                <td>const</td>
+                <td><span class="key">変数宣言。データを一時的に保存する箱を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>let</td>
+                <td><span class="key">変数宣言。データを一時的に保存する箱を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>console.log()</td>
+                <td><span class="key">出力。ブラウザの「検証ツール（コンソール）」に結果を表示します。</span></td>
+            </tr>
+            <tr>
+                <td>document.querySelector()</td>
+                <td><span class="key">取得。HTMLの要素（classやid）をJSで操作するために「キャッチ」します。</span></td>
+            </tr>
+            <tr>
+                <td>addEventListener()</td>
+                <td><span class="key">イベント。「クリックされたら」「キーを押したら」といった動作のきっかけを作ります。</span></td>
+            </tr>
+            <tr>
+                <td>function / =></td>
+                <td><span class="key">関数。ひとまとめの処理に名前をつけて、いつでも呼び出せるようにします。</span></td>
+            </tr>
+            <tr>
+                <td>if / else if / else</td>
+                <td><span class="key">分岐。もし〜ならA、そうでなければB」と処理を分けます。</span></td>
+            </tr>
+            <tr>
+                <td>for / forEach</td>
+                <td><span class="key">繰り返し。大量のデータを順番に処理したいときに使います。</span></td>
+            </tr>
+            <tr>
+                <td>fetch()</td>
+                <td><span class="key">戻り値。関数の処理結果を外に返します。</span></td>
+            </tr>
+            <tr>
+                <td>return</td>
+                <td><span class="key">外部のサーバーからデータを取ってきたり、送ったりするときに使います。</span></td>
+            </tr>
+            <tr>
+                <td>class / id</td>
+                <td><span class="key">JSからCSSのクラスを付け外しして、アニメーションなどを制御します。</span></td>
+            </tr>
+
+                    </tbody>
+    </table>
+
+    <br><br>
+
+<div class="section-title">PYTHON CODE</div>
+<a href="https://ja.wikipedia.org/wiki/Python" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner4.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td># コメント</td>
+                <td><span class="key">1行コメント</span></td>
+            </tr>
+            <tr>
+                <td>""" コメント """</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>print()"</td>
+                <td><span class="key">画面出力。<br>指定した文字や計算結果を画面に表示する。</span></td>
+            </tr>
+            <tr>
+                <td>変数名 = 値</td>
+                <td><span class="key">変数宣言。<br>データを一時的に保存する箱を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>input()</td>
+                <td><span class="key">キーボード入力。<br>画面からユーザーが文字を入力できるように待ち状態を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>if / elif / else</td>
+                <td><span class="key">条件分岐。<br>「もし〜ならA、別の条件ならB、それ以外ならC」と処理を分けます。</span></td>
+            </tr>
+           
+                    </tbody>
+    </table>
+
+    <br><br>
+
+<div class="section-title">JAVA CODE</div>
+<a href="https://ja.wikipedia.org/wiki/Java" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner10.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>// コメント</td>
+                <td><span class="key">1行コメント</span></td>
+            </tr>
+            <tr>
+                <td>/* コメント */</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>System.out.println();</td>
+                <td><span class="key">画面出力。<br>指定した文字や計算結果を画面に表示して、最後に自動で改行します。</span></td>
+            </tr>
+            <tr>
+                <td>int / String </td>
+                <td><span class="key">データ型。<br>変数（箱）を作る時に、「数字を入れる箱（int）」や「文字を入れる箱（String）」のように、中身の種類をあらかじめカチッと指定します。</span></td>
+            </tr>
+            <tr>
+                <td>public static void main(String[] args) { ... } </td>
+                <td><span class="key">メインメソッド。<br>Javaのプログラムが起動したときに、一番最初に自動で実行される「魔法の発動陣（入り口）」です。</span></td>
+            </tr>
+            <tr>
+                <td>public static void main(String[] args) { ... } </td>
+                <td><span class="key">外部プログラムの読み込み。<br>キーボードから文字や数値を入力してもらうための「Scanner（スキャナー）」という道具を準備します。</span></td>
+            </tr>
+            <tr>
+                <td>if (条件) { ... } else { ... }</td>
+                <td><span class="key">条件分岐。<br>「もし〜ならA、それ以外ならB」と処理を分けます。<br>*条件式は必ず ( ) で囲みます。</span></td>
+            </tr>
+           
+                    </tbody>
+    </table>
+
+    <br><br>
+
+<div class="section-title">C++ CODE</div>
+<a href="https://ja.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner5.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>// コメント</td>
+                <td><span class="key">1行コメント</span></td>
+            </tr>
+            <tr>
+                <td>/* コメント */</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>std::cout << "文字列" << std::endl;</td>
+                <td><span class="key">画面出力。<br>指定した文字を画面に表示し、endl で自動改行します。</span></td>
+            </tr>
+            <tr>
+                <td>int main() { ... return 0; }</td>
+                <td><span class="key">メイン関数。<br>プログラムが起動したときに自動で実行される「魔法の発動口」です。<br>最後に return 0; を書いて正常終了させます。</span></td>
+            </tr>
+            <tr>
+                <td>#include &lt;iostream&gt</td>
+                <td><span class="key">外部機能の準備。<br>画面に文字を出したり（cout）、入力を受け取ったり（cin）するための基本道具箱をプログラムの先頭で読み込みます。</span></td>
+            </tr>
+            <tr>
+                <td>std::cin >> 変数名;</td>
+                <td><span class="key">キーボード入力。<br>ユーザーが画面から入力した文字や数値を、指定した変数（箱）の中に格納します。</span></td>
+            </tr>
+            <tr>
+                <td>using namespace std;</td>
+                <td><span class="key">名前空間の省略。<br>これをプログラムの最初に書いておくと、std::cout の「std::」を全部省略して、ただの cout や cin として書けるようになります。</span></td>
+            </tr>
+           
+                    </tbody>
+    </table>
+
+    <br><br>
+
+<div class="section-title">RUBY CODE</div>
+<a href="https://ja.wikipedia.org/wiki/Ruby" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner6.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td># コメント</td>
+                <td><span class="key">1行コメント</span></td>
+            </tr>
+            <tr>
+                <td>=begin ... =end</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>puts "文字列"</td>
+                <td><span class="key">画面出力。<br>指定した文字を画面に表示し、自動で改行します。</span></td>
+            </tr>
+            <tr>
+                <td>puts "変数名 = 値"</td>
+                <td><span class="key">変数宣言。<br>データを一時的に保存する箱を作ります。</span></td>
+            </tr>
+            <tr>
+                <td>gets.chomp</td>
+                <td><span class="key">キーボード入力。<br>ユーザーが画面から入力した文字を受け取ります。<br>末尾の改行（Enterキーのデータ）を自動でカット（chomp）してくれます。</span></td>
+            </tr>
+            <tr>
+                <td># {変数名}</td>
+                <td><span class="key">式展開。<br>ダブルクォーテーション "" の文章の中に、変数の中身を直接埋め込む魔法です。</span></td>
+            </tr>
+            <tr>
+                <td>if 条件 ... end</td>
+                <td><span class="key">条件分岐。<br>「もし〜なら」という処理を作ります。</span></td>
+            </tr>
+           
+                    </tbody>
+    </table>
+
+    <br><br>
+
+<div class="section-title">PHP CODE</div>
+<a href="https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner7.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td># コメント</td>
+                <td><span class="key">1行コメント</span></td>
+            </tr>
+            <tr>
+                <td>/* ... */</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>&lt?php ... ?&gt</td>
+                <td><span class="key">PHPの開始と終了。<br>HTMLの中にPHPのコード（魔法）を書き込むための「ここからココまでがPHPの範囲だよ」という境界線です。</span></td>
+            </tr>
+            <tr>
+                <td>echo "文字列";</td>
+                <td><span class="key">画面出力。<br>指定した文字やHTMLタグを画面（ブラウザ）に吐き出します。</span></td>
+            </tr>
+            <tr>
+                <td>$変数名 = 値;</td>
+                <td><span class="key">変数宣言。<br>データを保存する箱を作ります。<br>PHPの変数は、必ず頭に「$（ドルマーク）」をつけるルールです。</span></td>
+            </tr>
+            <tr>
+                <td>$_POST["名前"] / $_GET["名前"]</td>
+                <td><span class="key">フォームデータの受け取り。<br>Webサイトのお問い合わせフォームなどで、ユーザーが入力して送信ボタンを押した中身をキャッチします。</span></td>
+            </tr>
+            <tr>
+                <td>. （ドットによる文字列結合）</td>
+                <td><span class="key">文字列の結合。<br>文字と文字、または文字と変数の中身をガッチャンコと繋ぎ合わせます。</span></td>
+            </tr>
+           
+                    </tbody>
+    </table>
+    <br><br>
+            <div class="end-title">【重要】（基本的に）プログラムコードは後ろに記述したコードが優先されます</div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="section-title">TYRANOSCRIPT CODE</div>
+<a href="https://tyrano.jp/" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner8.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>[tb_start_text mode=4 ]<br>
+                ; sample<br>
+                [_tb_end_text]</td>
+                <td><span class="key">一行コメント<br>*";"のみだとエラーになる場合があるので注意<br>&nbsp;&nbsp;必ず[tb]タグの中に入れること</span></td>
+            </tr>  
+            <tr>
+                <td>[tb_start_tyrano_code]<br>
+                ; sample<br>
+                [_tb_end_tyrano_code]</td>
+                <td><span class="key">一行コメント<br>*";"のみだとエラーになる場合があるので注意<br>&nbsp;&nbsp;必ず[tb]タグの中に入れること</span></td>
+            </tr>  
+            <tr>
+                <td>#sample</td>
+                <td><span class="key">キャラ名表示</span></td>
+            </tr> 
+            <tr>
+                <td>#& sf.name</td>
+                <td><span class="key">システム変数に登録しているキャラ名表示</span></td>
+            </tr>  
+            <tr>
+                <td>#sample</td>
+                <td><span class="key">キャラ名表示</span></td>
+            </tr> 
+            <tr>
+                <td>[r]</td>
+                <td><span class="key">改行</span></td>
+            </tr>   
+            <tr>
+                <td>[p]</td>
+                <td><span class="key">クリック待ち+改ページ<br>*ボタンの効果も消えます。</span></td>
+            </tr>
+            <tr>
+                <td>[l][cm]</td>
+                <td><span class="key">クリック待ち+改ページ<br>*ボタンの効果を残したい場合に使用</span></td>
+            </tr> 
+            <tr>
+                <td>[l][er]</td>
+                <td><span class="key">クリック待ち+改ページ<br>*表示中のレイヤーのみ改行<br>&nbsp;&nbsp;ボタンの効果は残ります。</span></td>
+            </tr>  
+            <tr>
+                <td>[l]</td>
+                <td><span class="key">クリック待ち</span></td>
+            </tr> 
+            <tr>
+                <td>[emb exp="sf.name"]</td>
+                <td><span class="key">テキストBOX内にシステム変数に登録しているキャラ名などを記載</span></td>
+            </tr>  
+            <tr>
+                <td>_</td>
+                <td><span class="key">空白（スペース）</span></td>
+            </tr>
+            <tr>
+                <td>[font size=00]</td>
+                <td><span class="key">フォントサイズを一時的に変更</span></td>
+            </tr>  
+            <tr>
+                <td>[font color=0x000000]</td>
+                <td><span class="key">フォントカラー変更<br>*0x+16進数のカラーコードで記述</span></td>
+            </tr> 
+            <tr>
+                <td>[font bold="true"]</td>
+                <td><span class="key">フォントを太文字に変更/span></td>
+            </tr> 
+            <tr>
+                <td>[resetfont]</td>
+                <td><span class="key">フォントを初期値に戻す</span></td>
+            </tr> 
+
+                    </tbody>
+    </table>
+    <br>
+            ティラノスクリプトはシケモクMK様が制作したノベルゲームエンジンです。<br>
+            プログラムがあまり得意でない方でもゲーム作成できるように、ティラノビルダーも用意されています。<br>
+            JavaScriptを組み合わせることでアプリ開発もできる非常に便利なエンジンです。<br>
+            詳しくは<a href="https://tyrano.jp/" target="_blank" rel="noopener noreferrer" style="color: #ffd700;">公式ページ</a>を参照してください。<br>
+            *Socrariusのサブシステムはティラノスクリプトで制作していますので、意外と簡単に改造できるようになっています<br>
+            *ティラノスクリプトは何処にでも簡単にジャンプできる仕様ですので後半コード優先のルールはありません
+
+            
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="section-title">PANDORA'S BOX</div>
+<img src="https://socrarius-tool.com/program/banner9.png" width="720px">
+<br>
+<table style="width: 100%; border-collapse: collapse; font-family: 'Courier New', Courier, monospace; font-size: 11px; color: #cc66ff;">
+    <tbody>
+        <tr style="border-bottom: 1px solid rgba(188, 0, 221, 0.2);">
+            <td style="padding: 6px 4px; color: #ffffff;">P(w<sub>t</sub> | w<sub>1</sub>, w<sub>2</sub>, ..., w<sub>t-1</sub>)</td>
+            <td style="padding: 6px 4px; text-align: right;">
+                <span class="key" style="color: #ff4444; font-weight: bold;">単語の確率予測： P(w<sub>t</sub> | w<sub>1</sub>, w<sub>2</sub>, ..., w<sub>t-1</sub>)</span>
+            </td>
+        </tr> 
+
+        <tr style="border-bottom: 1px solid rgba(188, 0, 221, 0.2);">
+            <td style="padding: 6px 4px; color: #ffffff;">apple &rarr; v<sub>apple</sub> = (0.12, -0.7, 1.3, ...)</td>
+            <td style="padding: 6px 4px; text-align: right;">
+                <span class="key" style="color: #33ff66; font-weight: bold;">単語「apple」のベクトル（埋め込み）化： v<sub>apple</sub> = (0.12, -0.7, 1.3, ...)</span>
+            </td>
+        </tr> 
+
+        <tr style="border-bottom: 1px solid rgba(188, 0, 221, 0.2);">
+            <td style="padding: 6px 4px; color: #ffffff;">Attention(Q, K, V) = softmax( (QK<sup>&top;</sup>) / &radic;d<sub>k</sub> ) V</td>
+            <td style="padding: 6px 4px; text-align: right;">
+                <span class="key" style="color: #00ffff; font-weight: bold;">トランスフォーマーの核「Scaled Dot-Product Attention」公式</span>
+            </td>
+        </tr> 
+
+        <tr style="border-bottom: 1px solid rgba(188, 0, 221, 0.2);">
+            <td style="padding: 6px 4px; color: #ffffff;">h = &sum; &alpha;<sub>i</sub> v<sub>i</sub></td>
+            <td style="padding: 6px 4px; text-align: right;">
+                <span class="key" style="color: #ffaa00; font-weight: bold;">重み付けによるコンテキスト（文脈）ベクトル h の合成</span>
+            </td>
+        </tr>  
+
+        <tr style="border-bottom: 1px solid rgba(188, 0, 221, 0.2);">
+            <td style="padding: 6px 4px; color: #ffffff;">softmax(Wh)</td>
+            <td style="padding: 6px 4px; text-align: right;">
+                <span class="key" style="color: #bc00dd; font-weight: bold;">最終的な確率分布を出力する「softmax関数」</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+            <div class="section-title">DIVA & DIVO MAGIC SPELL</div>
+<img src="https://socrarius-tool.com/program/banner11.png" width="720px">
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>[Verse 1] [Verse 2]</td>
+                <td><span class="key">Aメロ:物語が進む。落ち着きめ呪文</span></td>
+            </tr> 
+            <tr>
+                <td>[Pre-Chorus]</td>
+                <td><span class="key">Bメロ：サビ前の溜め。盛り上げていく呪文</span></td>
+            </tr> 
+            <tr>
+                <td>[Chorus]</td>
+                <td><span class="key">サビ：一番キャッチー。爆発させる呪文</span></td>
+            </tr> 
+            <tr>
+                <td>[Bridge]</td>
+                <td><span class="key">Cメロ/大サビ前：展開変える。「静か or 叫び」の呪文</span></td>
+            </tr>  
+            <tr>
+                <td>[Intro] [Outro]</td>
+                <td><span class="key">前奏/後奏：世界観作り。（無くてもOK）の呪文</span></td>
+            </tr>
+            <tr>
+                <td>[Break] [Drop]</td>
+                <td><span class="key">間奏/ドロップ：EDM系で。「無音 or 轟音」の呪文</span></td>
+            </tr>  
+            <tr>
+                <td>[Hook]</td>
+                <td><span class="key">フック：サビの核。繰り返すキメフレーズの呪文</span></td>
+            </tr> 
+            <tr>
+                <td>key change up, modulation</td>
+                <td><span class="key">キーを上げてもらう呪文</span></td>
+            </tr>  
+            <tr>
+                <td>build up, explosive chorus</td>
+                <td><span class="key">ためて爆発呪文</span></td>
+            </tr> 
+            <tr>
+                <td>whisper to belt, dynamic vocals</td>
+                <td><span class="key">囁き→シャウト呪文</span></td>
+            </tr> 
+            <tr>
+                <td>add choir, layered harmonies, gospel</td>
+                <td><span class="key">合唱つけてもらう呪文</span></td>
+            </tr>  
+            <tr>
+                <td>guitar solo 8 bars, shredding</td>
+                <td><span class="key">ギターソロ呪文</span></td>
+            </tr> 
+            <tr>
+                <td>fade out, instrumental outro</td>
+                <td><span class="key">フェードアウト呪文</span></td>
+            </tr> 
+            <tr>
+                <td>可愛い女の子が歌う、アニソン</td>
+                <td><span class="key">英語より効果絶大の究極魔法</span></td>
+            </tr> 
+            <tr>
+                <td>かっこいい男性が歌う、アニソン</td>
+                <td><span class="key">英語より効果絶大の究極魔法</span></td>
+            </tr> 
+            <tr>
+                <td>一人で歌う</td>
+                <td><span class="key">英語より効果絶大の究極魔法</span></td>
+            </tr> 
+            <tr>
+                <td>難しい漢字、一文字英語、数字もカタカナ</td>
+                <td><span class="key">読み間違え防止の日本語用魔法</span></td>
+            </tr>  
+            <tr>
+                <td>All numbers must be written as full English words</td>
+                <td><span class="key">Reading Error Prevention Magic</span></td>
+            </tr>
+            <tr>
+                <td>[mportant]一人で歌う</td>
+                <td><span class="key">一人で歌ってもらう魔法</span></td>
+            </tr> 
+            <tr>
+                <td>[mportant]Singing alone</td>
+                <td><span class="key">The magic of having someone sing alone</span></td>
+            </tr>    
+                    </tbody>
+    </table>
+
+ <br><br>
+
+<div class="section-title">THE ULTIMATE MAGIC SPELL</div>
+<img src="https://socrarius-tool.com/program/banner12.png" width="720px">
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>絵が劣化してきているから綺麗にして</td>
+                <td><span class="key">画質再生呪文</span></td>
+            </tr> 
+            <tr>
+                <td>〇〇にして、他は全部そのまま</td>
+                <td><span class="key">固定呪文</span></td>
+            </tr> 
+            <tr>
+                <td>縦横奥行きは絶対に動かさない</td>
+                <td><span class="key">ループ動画呪文</span></td>
+            </tr> 
+            <tr>
+                <td>ループ動画</td>
+                <td><span class="key">ループ動画呪文</span></td>
+            </tr>  
+            <tr>
+                <td>一回だけ瞬きをさせる</td>
+                <td><span class="key">ループ動画呪文</span></td>
+            </tr>
+            <tr>
+                <td>*プラスαレシピが必要</td>
+                <td><span class="key">*ループ動画呪文</span></td>
+            </tr>  
+            <tr>
+                <td>"「〇〇〇」「〇〇〇」と言う"を組み込む</td>
+                <td><span class="key">セリフ発動呪文</span></td>
+            </tr> 
+            <tr>
+                <td>真っ白な画像を描いて +α</td>
+                <td><span class="key">強制サイズ変換呪文</span></td>
+            </tr>        
+                    </tbody>
+    </table>
+
+ <br><br> <br><br>
+
 <!-- 🌸 ここからSAO風サイバーフレーム魔法 -->
 <div class="sao-video-container">
     <div class="sao-corner tl"></div>
@@ -76,3 +971,49 @@
 }
 </style>
 <!-- 🌸 ここまで -->
+
+  <br><br>
+
+
+</div>
+
+
+
+<script>
+    // 🌸 画面の読み込みが「完全完了」してから中身を実行させる安全装置
+    window.addEventListener('DOMContentLoaded', () => {
+
+        // 💡「table tr td:first-child」で各行の最初の列だけを狙い撃ち
+        document.querySelectorAll('table tr td:first-child').forEach(td => {
+            // 🗺️ マウスを乗せたときにポインターを変える
+            td.style.cursor = 'pointer';
+            td.style.transition = 'all 0.2s ease';
+
+            td.addEventListener('click', async () => {
+                const textToCopy = td.innerText.trim();
+                
+                try {
+                    await navigator.clipboard.writeText(textToCopy);
+                    
+                    // ✨ コピー成功時のエフェクト（英語側だけが光ります！）
+                    const originalBg = td.style.backgroundColor;
+                    td.style.backgroundColor = 'rgba(0, 242, 254, 0.25)';
+                    td.style.boxShadow = 'inset 0 0 10px rgba(0, 242, 254, 0.5)';
+                    
+                    setTimeout(() => {
+                        td.style.backgroundColor = originalBg;
+                        td.style.boxShadow = 'none';
+                    }, 200);
+
+                } catch (err) {
+                    console.error('魔法のコピーに失敗しました…＞＜', err);
+                }
+            });
+        });
+
+    }); // 🌸 安全装置の閉じ
+</script>
+
+
+</body>
+</html>
