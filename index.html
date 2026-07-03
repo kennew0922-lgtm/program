@@ -44,6 +44,19 @@
             box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
         }
 
+                        /* 🌸 黄色セクションタイトル（追加） */
+        .section-title-yellow {
+            background: #000;
+            color: #ccff00;
+            padding: 8px 15px;
+            margin: 15px 0 15px 0;
+            font-size: 11px;
+            font-weight: bold;
+            border-left: 4px solid #ccff00;
+            letter-spacing: 2px;
+            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
             /* 🌸 セクションタイトル（追加） */
         .end-title {
             background: #000;
@@ -305,7 +318,85 @@
     </table>
 
 
-<br><br>
+    <div class="section-title-yellow">PRACTICAL CSS CODE 【万能レイヤー配置】フル機能テンプレート</div>
+
+     <table>
+        <tbody>
+            <tr>
+                <td>
+.socrarius-wrapper {<br>
+  /* position: fixed; 画面のスクロールに影響されず、ずっとそこに張り付く配置魔法 */<br>
+  position: fixed;<br>
+  
+  /* top: 0; 画面の一番上からスタート（bottom: 0; に変えれば下端からになります） */<br>
+  top: 0;<br>
+  
+  /* left: 0; 画面の左端からスタート（right: 0; に変えれば右端からになります） */<br>
+  left: 0;<br>
+  
+  /* width: 100vw; 画面の横幅いっぱいに広げる（pxで指定すれば固定幅になります） */<br>
+  width: 100vw; <br>
+  
+  /* height: 100vh; 画面の縦幅いっぱいに広げる（pxで指定すれば固定の高さになります） */<br>
+  height: 100vh;<br>
+  
+  /* pointer-events: none; この透明な壁をマウスが通り抜けて、下のボタンを押せるようにする魔法 */<br>
+  pointer-events: none; <br>
+  
+  /* z-index: 1000; 重なり順。数字が大きいほど手前に出ます。1増やすと1つ手前に！ */<br>
+  z-index: 1000; <br>
+}<br>
+
+/* --- UIパネルコンテナ（ここにボタンなどを並べます） ---*/<br>
+
+.socrarius-panel {<br>
+  /* position: absolute; 親（wrapper）の中での位置を決める配置魔法 */<br>
+  position: absolute;<br>
+  
+  /* top: 50%; left: 50%; transform: translate(-50%, -50%); <br>
+     これでどんな画面サイズでも必ず中心に配置されます */<br>
+  top: 50%;<br>
+  left: 50%;<br>
+  transform: translate(-50%, -50%);<br>
+  
+  width: 400px; /* パネルの横幅（pxで自由に変えてね！） */<br>
+  background: rgba(0, 0, 0, 0.8); /* 黒くて透ける背景色（最後の0.8を0〜1で変えると透明度が変わるよ） */<br>
+  border: 1px solid #fff; /* 白い枠線 */<br>
+  padding: 20px; /* 内側の余白 */v
+  
+  /* pointer-events: auto; パネル自体はクリックできるようにする設定 */<br>
+  pointer-events: auto; <br>
+  
+  border-radius: 8px; /* 角を丸くする魔法 */<br>
+}<br>
+
+/* --- ボタンを並べるためのグループ ---*/<br>
+.button-group {<br>
+  /* display: flex; 子要素（ボタン）を横に並べるための最強の魔法 */<br>
+  display: flex;<br>
+  
+  /* justify-content: space-between; ボタン同士の間隔を均等にする設定 */<br>
+  justify-content: space-between;<br>
+  
+  margin-top: 15px; /* 上の要素との隙間 */<br>
+}<br>
+
+.action-btn {<br>
+  /* position: relative; 基本の配置。子要素を少しずらしたい時に使います */<br>
+  position: relative; <br>
+  
+  padding: 10px 20px; /* ボタンの大きさ */<br>
+  cursor: pointer; /* マウスを乗せると指の形になる */<br>
+}<br>
+</td>
+                <td><span class="key">
+✨魔法陣の基本設計図✨<br>
+✨数値を変えるだけで、好きな場所にUIを召喚✨</span></td>
+            </tr>     
+                    </tbody>
+    </table>
+
+    <br><br>
 
 <div class="section-title">JAVASCRIPT CODE</div>
 <a href="https://ja.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner3.png" width="720px"><a>
@@ -372,7 +463,126 @@
                     </tbody>
     </table>
 
+
+    <div class="section-title-yellow">PRACTICAL JAVASCRIPT CODE 1 【サイドバー/フローティングUI】テンプレート</div>
+
+       <table>
+        <tbody>
+            <tr>
+                <td>
+.side-menu-container {<br>
+  /* position: fixed; 画面の端にピタッと張り付く魔法 */<br>
+  position: fixed;<br>
+  
+  /* right: 0; 画面の右端からの距離。left: 0; にすれば左側に移動！ */<br>
+  right: 0;<br>
+  
+  /* top: 100px; 上端からの距離 */<br>
+  top: 100px;<br>
+  
+   /* メニューの横幅 */<br>
+  width: 250px;<br>
+  
+  /* transition: 動きのスピードを設定。0.3sは0.3秒かけて動くという意味 */<br>
+  transition: all 0.3s ease; <br>
+  
+  /* z-index: 1000; 重なり順。他のメニューより手前にしたい時は大きくしてね */<br>
+  z-index: 1000;<br>
+}<br>
+
+.menu-item {<br>
+  /* display: block; 縦に積み重なるように表示する設定 */<br>
+  display: block;<br>
+
+  /* ボタンの文字の周りの広さ */<br>
+  padding: 15px; <br>
+
+  /* 薄い半透明の背景色 */<br>
+  background: rgba(255, 255, 255, 0.1); <br>
+  /* 下側の区切り線 */<br>
+  border-bottom: 1px solid #444; <br>
+  color: white;<br>
+  text-decoration: none;<br>
+}<br>
+
+/* --- マウスを乗せると色が変わる！ --- */<br>
+.menu-item:hover {<br>
+  background: rgba(0, 200, 255, 0.5); /* マウスを乗せると青く光る */<br>
+}<br>
+</td>
+                <td><span class="key">✨ 常にそばにいる「サイドバー」魔法陣 ✨</span></td>
+            </tr>     
+                    </tbody>
+    </table>
+
+
+ <div class="section-title-yellow">PRACTICAL JAVASCRIPT CODE 2 【サイドバー/フローティングUI】テンプレート</div>
+
+       <table>
+        <tbody>
+            <tr>
+                <td>
+.modal-overlay {<br>
+  /* position: fixed; 画面全体を覆い尽くす魔法 */<br>
+  position: fixed;<br>
+  
+  /* inset: 0; 上下左右すべて0にすることで、画面いっぱいに広げます */<br>
+  inset: 0;<br>
+  
+  /* 背景を暗くする魔法 */<br>
+  background: rgba(0, 0, 0, 0.6);<br>
+  
+  /* display: flex; 中身（モーダル本体）を綺麗に真ん中に配置するセット */<br>
+  display: flex;<br>
+  justify-content: center;<br>
+  align-items: center;<br>
+  
+  /* z-index: 1000; メニューよりもさらに手前に出したい時は数字を大きくしてね */<br>
+  z-index: 1000;<br>
+}<br>
+
+.modal-content {<br>
+  /* position: relative; 中にある「閉じるボタン」を配置するための基準 */<br>
+  position: relative;<br>
+  /* パネルの中の色 */<br>
+  background: #fff; <br>
+  /* 画面幅の80％を使う */<br>
+  width: 80%; <br> 
+  /* ただし最大でも500pxまで */  <br>   
+  max-width: 500px; <br>
+   /* 親要素との距離 */<br>
+  padding: 30px;<br>
+  /* 角を丸くして優しくする */<br>
+  border-radius: 12px; <br>
+  
+  /* 影をつける魔法（立体感が出ます！） */<br>
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);<br>
+}<br>
+
+.close-trigger {<br>
+  /* 親（modal-content）の右上に配置　*起点の設定 */<br>
+  position: absolute;<br>
+  /* 起点の高さ */<br>
+  top: 10px;<br>
+  /* 起点の位置 */<br>
+  right: 15px;<br>
+  
+  cursor: pointer; /* マウスを乗せると指の形になる */<br>
+  font-size: 20px;<br>
+}
+
+/* --- マウスを乗せると色が変わる！ --- */<br>
+.menu-item:hover {<br>
+  background: rgba(0, 200, 255, 0.5); /* マウスを乗せると青く光る */<br>
+}<br>
+<td><span class="key">✨ ど真ん中に浮かぶ「モーダル」魔法陣 ✨</span></td>
+            </tr>  
+                                </tbody>
+    </table>   
+
     <br><br>
+
+
 
 <div class="section-title">PYTHON CODE</div>
 <a href="https://ja.wikipedia.org/wiki/Python" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner4.png" width="720px"><a>
