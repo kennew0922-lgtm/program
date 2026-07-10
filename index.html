@@ -850,9 +850,75 @@
                 <td>[resetfont]</td>
                 <td><span class="key">フォントを初期値に戻す</span></td>
             </tr> 
+            <tr>
+                <td>[resetfont]</td>
+                <td><span class="key">フォントを初期値に戻す</span></td>
+            </tr> 
 
                     </tbody>
     </table>
+
+ <div class="section-title-yellow">MAIN MAGIC SAMPLE CODE</div>
+
+       <table>
+        <tbody>
+            <tr>
+            <td>[tb_start_tyrano_code]<br>
+                [bg  time="0"  method="fadeIn"  storage="sample.webp"  ]<br>
+                [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨背景を変更する初級魔法✨<br>
+                ビルダーだけだと"webp"が使用できませんが、コードを使えば使えます。</span></td>
+            </tr>
+            <tr>
+            <td>[tb_start_tyrano_code]<br>
+                [clearstack]<br>
+                [wait_cancel]<br>
+        　      [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨バグ回避魔法✨</span></td>
+            </tr>
+            <tr>
+            <td><br>
+                [nowait] <br>
+                瞬時表示<br>
+                [wait_cancel]</td>
+                <td><span class="key">✨テキストを瞬間表示する魔法✨</span></td>
+            </tr>  
+            <tr>
+            <td>[tb_start_tyrano_code]<br>
+            [button target=*Continue enterimg="Continue.png" clickimg="Continue.png" x=755 y=467 graphic="Continue2.png"]<br>
+            [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨オンマウス時に画像を表示する魔法✨</span></td>
+            </tr>
+            <td>[tb_start_tyrano_code]<br>
+                [layopt layer=message2 visible=true]<br>
+                [_tb_end_tyrano_code]<br>
+                [tb_start_tyrano_code]<br>
+                [layopt layer=message2 visible=fales]<br>
+                [_tb_end_tyrano_code]<br>
+            </td>
+                <td><span class="key">✨メッセージウィンド2の表示・非表示魔法✨<br>
+                工夫するとUIの上にキャラ表示などなんでもできます</span></td>
+            </tr> 
+            <tr>
+            <td>[tb_start_tyrano_code]<br>
+            [button name="tab" fix="true" graphic="tab_icon.png" role="sleepgame" x="1150" y="30" storage="tablet.ks" target="*start" clickse=select1.ogg]<br>
+            [_tb_end_tyrano_code]<br>
+            [clearfix name="tab"]<br>
+            [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨自作ボタンの表示・非表示魔法✨</span></td>
+            </tr> 
+             <td>[tb_start_tyrano_code]<br>
+            [macro name="mes0"]<br>
+            [current layer="message0"]<br>
+            [er]<br>
+            [endmacro]<br>
+            [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨自作のマクロを作る魔法✨</span></td>
+            </tr>  
+                
+                    </tbody>
+    </table>
+
     <br>
             ティラノスクリプトはシケモクMK様が制作したノベルゲームエンジンです。<br>
             プログラムがあまり得意でない方でもゲーム作成できるように、ティラノビルダーも用意されています。<br>
