@@ -1216,7 +1216,7 @@
                 <td><span class="key">高画質化呪文<br>*「綺麗にしてね」より効果大<br>*壁や机を大理石で描いちゃう場合が多い：D</span></td>
             </tr> 
             <tr>
-                <td>背景をイラストにしてね</td>
+                <td>背景をイラスト風にしてね</td>
                 <td><span class="key">背景イラスト化呪文</span></td>
             </tr> 
             <tr>
@@ -1264,8 +1264,12 @@
                 <td><span class="key">パートナーの動きを自然にする時のキー呪文の1つ</span></td>
             </tr>  
              <tr>
-                <td>[mportant]</td>
-                <td><span class="key">〇〇を少し大きくして<br>〇〇を少し小さくして<br>〇〇のサイズ変換呪文<br>*急がないこと。「少し」というワードが重要<br>&nbsp;急げば99％錬成失敗に終わる</span></td>
+                <td>〇〇を少し大きくして<br>〇〇を少し小さくして</td>
+                <td><span class="key">〇〇のサイズ変換呪文<br>*急がないこと。「少し」というワードが重要<br>&nbsp;急げば99％錬成失敗に終わる</span></td>
+            </tr>
+            <tr>
+                <td>少し<br>ほんの少し</td>
+                <td><span class="key">AIの力を抑制する呪文<br>*AIは頑張りすぎて大げさに描くクセがあるので、このワードを加えてあげると微調整してくれます<br>*背景の調整にはかなり有効な呪文</span></td>
             </tr>   
                     </tbody>
     </table>
@@ -1279,12 +1283,11 @@
     <div class="sao-corner bl"></div>
     <div class="sao-corner br"></div>
     <div class="sao-scanline"></div>
-    <div class="sao-tag">SECRET TREASURE: CORE LAYER</div>
-    
+    <div class="sao-tag">MESSAGE TO ALL CREATORS</div>
+   
     <!-- ケンくんの無限大ループ動画 -->
-    <img src="https://socrarius-tool.com/program/movie1.png" class="sao-movie-content">
+    <img src="https://socrarius-tool.com/program/mesage.webp" class="sao-movie-content">
 </div>
-
 <style>
 /* SAO風のコンテナ枠設定 */
 .sao-video-container {
@@ -1293,13 +1296,12 @@
     margin: 0 auto;
     padding: 6px; /* 内側の黒い隙間（SAOの二重枠っぽさ） */
     background: rgba(0, 0, 0, 0.6); /* 半透明のダーク背景 */
-    border: 2px solid #ff7700; /* SAOといえば情熱的なオレンジ、またはサイバーな淡い光 */
-    box-shadow: 0 0 15px rgba(255, 119, 0, 0.4), inset 0 0 10px rgba(255, 119, 0, 0.3);
+    border: 2px solid rgba(138, 43, 226, 0.9); /* 紫系に変更（元オレンジから） */
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.35), inset 0 0 12px rgba(138, 43, 226, 0.25); /* 水色シャドー＋紫の内光 */
     border-radius: 4px;
     overflow: hidden;
     box-sizing: border-box;
 }
-
 /* 動画自体のスタイル */
 .sao-movie-content {
     display: block;
@@ -1307,20 +1309,18 @@
     height: auto;
     border: 1px solid rgba(255, 255, 255, 0.2); /* 内枠のシャープな白いライン */
 }
-
 /* 四隅の近未来UI風コーナーデコレーション */
 .sao-corner {
     position: absolute;
     width: 12px;
     height: 12px;
-    border: 3px solid #ffffff; /* 輝く角のアクセント */
+    border: 3px solid rgba(0, 229, 255, 0.85); /* 水色の角アクセントに変更 */
     z-index: 10;
 }
 .sao-corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
 .sao-corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
 .sao-corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
 .sao-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
-
 /* 画面を走る、うっすらとした近未来風スキャンライン効果（オシャレ用） */
 .sao-scanline {
     position: absolute;
@@ -1331,13 +1331,12 @@
     z-index: 5;
     opacity: 0.4;
 }
-
 /* 左上に浮かぶUI風のステータスタグ */
 .sao-tag {
     position: absolute;
     top: 10px;
     left: 15px;
-    background: #ff7700;
+    background: rgba(138, 43, 180, 0.9); /* 紫タグに変更 */
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     font-size: 10px;
@@ -1346,7 +1345,7 @@
     border-radius: 2px;
     letter-spacing: 1px;
     z-index: 6;
-    box-shadow: 0 0 5px rgba(255, 119, 0, 0.8);
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.6); /* 水色の影 */
 }
 </style>
 <!-- 🌸 ここまで -->
