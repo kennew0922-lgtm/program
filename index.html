@@ -167,6 +167,60 @@
             font-weight: bold;
         }
 
+
+        * 🌸 控えめでスタイリッシュな画像ディスプレイBOX */
+        .image-display-box {
+        position: relative;
+        display: inline-block; /* 画像のサイズにフィット */
+        max-width: 100%; /* クリエイターガイド画像（guide-img）のサイズ感をそのまま維持 */
+        margin: 10px 0;
+        padding: 8px; /* 枠と画像の間の程よい隙間 */
+        background: rgba(0, 15, 30, 0.6); /* 暗めのシースルー背景 */
+        border: 1px solid rgba(0, 242, 254, 0.25); /* 主張しすぎない薄いサイバーブルー枠 */
+        border-radius: 6px;
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.08), inset 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+       }
+
+        /* ホバーした時にほんのり魔法の輝きが増す演出 */
+        .image-display-box:hover {
+        border-color: rgba(0, 242, 254, 0.5);
+        box-shadow: 0 0 20px rgba(0, 242, 254, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 四隅の近未来風コーナーアクセント（控えめな装飾） */
+        .image-display-box::before,
+        .image-display-box::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-color: #00f2fe;
+        border-style: solid;
+        pointer-events: none;
+        }
+
+        /* 左上コーナー */
+        .image-display-box::before {
+        top: -1px; left: -1px;
+        border-width: 2px 0 0 2px;
+        }
+
+        /* 右下コーナー */
+        .image-display-box::after {
+        bottom: -1px; right: -1px;
+        border-width: 0 2px 2px 0;
+        }
+
+        /* BOX内部の画像設定（元のguide-imgクラスを活かします） */
+        .image-display-box img.guide-img {
+        width: 100% !important; /* BOXにぴったりフィット */
+        height: auto;
+        display: block;
+        border-radius: 3px;
+        }
+
+
                 /* カスタムスクロールバー */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: #345485; }
@@ -409,17 +463,35 @@
                     「A: Alpha（不透明度）」　0.0: 完全に透明　～　1.0: 完全に不透明（通常のベタ塗り）<br>
                     *イラストツールで簡単に色の値は調べられます</span></td>
             </tr>
-            <td>gap</td>
-                <td><span class="key">箱と箱の距離を調整</span></td>
             <tr>
-                <td>padding: 10px 10px 10px 10px;/td>
-                <td><span class="key">余白の調整<br>左から<br>
+                <td>padding: 10px 10px 10px 10px;</td>
+                <td><span class="key">箱内部の余白の調整<br>左から<br>
                     「上 (top)」<br>
                     「右 (right)」<br>
                     「下 (bottom)」<br>
                     「左 (left)」<br>
                     *覚え方のコツ「時計廻りで12時からスタート！」<br>
                     * 「"-"（マイナス」の値を入れるとエラーになるので注意</span></td>
+            </tr>
+            <tr>
+            <td>gap: 10px 10px 10px 10px;</td>
+                <td><span class="key">箱と箱の距離を調整<br>*上右下左はpadding同様</span></td>
+            </tr>
+            <tr>
+                <td>margin: 10px 20px 30px 40px;</td>
+                <td><span class="key">透明な余白（スペース）を作り、他の要素との距離を調整する<br>
+                    *上右下左はpadding同様</span></td>
+            </tr>
+            <tr>
+                <td>margin-top: 10px;<br>
+                    margin-right: 10px;<br>
+                    margin-bottom: 10px;<br>
+                    margin-left: 10px;<br>
+                    margin: 0 auto;<br>
+                </td>
+                <td><span class="key">"margin"の個別指定に使用<br>
+                    *中央揃え（margin: 0 auto;）：左右の値を auto にすると、ブロック要素を画面や親要素の水平方向の中央に配置できる<br>
+                    *マイナスの値で無理やり幅を狭めることも可能</span></td>
             </tr>
 
                     </tbody>
