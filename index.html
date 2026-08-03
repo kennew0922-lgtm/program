@@ -314,6 +314,10 @@
                 <td><span class="key">スペース特大</span></td>
             </tr>
             <tr>
+                <td><pre>&amp;thinsp;</pre></td>
+                <td><span class="key">スペース特大</span></td>
+            </tr>
+            <tr>
                 <td>&lt;hr&gt</td>
                 <td><span class="key">ブラウザに横腺を表示します。<br>「テーマの区切り」を示すのに便利です。</span></td>
             </tr>
@@ -358,7 +362,7 @@
                 *サイズ指定は必要なければ消せばOKです。</span></td>
             </tr> 
            <tr>
-                <td>&lt;hr style="border: none; border-top: 1px solid #00e5ff80; width: 100%;"&gt</td>
+                <td>&lt;hr style="border: none; border-top: 1px solid #00e5ff80; width: 98%;"&gt</td>
                 <td><span class="key">"border-top" = 「腺の太さ指定」<br>
                 "solid" = 「腺の色指定（16進数はフォトショのスポイトで抽出♪）（16進数の後ろの80は50％透過でこれが綺麗）<br>
                 "width" = 「腺の長さ」</span></td>
@@ -496,6 +500,21 @@
                     *マイナスの値で無理やり幅を狭めることも可能<br>
                     &nbsp;マイナス値調整の裏魔法を覚えておくとスタイリッシュなWEBページが作れます（最終手段）</span></td>
             </tr>
+            <tr>
+                <td>text-align: left;<br>
+                    text-align: center;<br>
+                    text-align: right;
+                </td>
+                <td><span class="key">テキストの配置を決めます。<br>順番に「左揃え」「中央揃え」「右揃え」</span></td>
+            </tr>
+            <tr>
+                <td>justify-content: flex-start;<br>
+                    justify-content: center;<br>
+                    justify-content: flex-end;
+                </td>
+                <td><span class="key">複数の要素（BOX）の配置を決めます。<br>順番に「左揃え」「中央揃え」「右揃え」</span></td>
+            </tr>
+
 
                     </tbody>
     </table>
