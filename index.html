@@ -435,12 +435,16 @@
                 <td><span class="key">セクションを作るための箱</span></td>
             </tr>
             <tr>
-                <td>width: </td>
+                <td>width: 10; </td>
                 <td><span class="key">横幅の長さを指定</span></td>
             </tr>
             <tr>
-                <td>height: </td>
+                <td>height: 10; </td>
                 <td><span class="key">縦幅の長さを指定</span></td>
+            </tr>
+            <tr>
+                <td>z-index: 10;</td>
+                <td><span class="key">レイヤーの位置を設定<br>0を起点に"-"なら下のレイヤー、数値のみなら上のレイヤー<br>*最大値は 2,147,483,647（約21億）</span></td>
             </tr>
             <tr>
                 <td>px</td>
@@ -485,6 +489,12 @@
             <tr>
                 <td>margin: 10px 20px 30px 40px;</td>
                 <td><span class="key">透明な余白（スペース）を作り、他の要素との距離を調整する<br>
+                    *上右下左はpadding同様<br>
+                    * 「"-"（マイナス」の値を入れるとエラーになるので注意</span></td>
+            </tr>
+            <tr>
+                <td>border-radius: 4px 8px 4px 8px;</td>
+                <td><span class="key">枠の丸みを調整する<br>
                     *上右下左はpadding同様<br>
                     * 「"-"（マイナス」の値を入れるとエラーになるので注意</span></td>
             </tr>
