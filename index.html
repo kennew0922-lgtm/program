@@ -1089,10 +1089,38 @@
         <tbody>
             <tr>
             <td>[tb_start_tyrano_code]<br>
+                ;キャラ退場<br>
+                [chara_hide_all  time="0"  wait="false"  ]<br>
+                ;キャラ登場<br>
+                [chara_show  time="0"  wait="true"  name="sample"  left=""  top=""  width="840"  height="420"  reflect="false"  storage="chara/1/sample.webp"  ]<br>
+                ;キャラ変更<br>
+                [chara_mod  name="sample"  time="0"  cross="false"  storage="chara/1/sample.webp"  ]<br>
+                [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨キャラ全員退場・登場・変更をする初級魔法✨<br>
+                「全員退場 → 登場 → 変更」のコンボならバグの回避ができます。<br>
+                キャラ変更をしない場合でも処理を入れておきましょう（これを入れないとマッピングに反映しません）<br>
+                *ビルダーだけだと"webp"が使用できませんが、コードを使えば使えます。</span></td>
+            </tr>
+            <tr>
+            <td>[tb_start_tyrano_code]<br>
+                [chara_hide  name="a"  time="0"  wait="false"  pos_mode="false"  ]
+                [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨キャラ一人を退場させる初級魔法✨<br>
+                *キャラを透過画像にして残しておいた方が楽です（状況により使い分けしてください）<br>
+                *ビルダーだけだと"webp"が使用できませんが、コードを使えば使えます。</span></td>
+            </tr>
+            <tr>
+            <td>[tb_start_tyrano_code]<br>
                 [bg  time="0"  method="fadeIn"  storage="sample.webp"  ]<br>
                 [_tb_end_tyrano_code]</td>
                 <td><span class="key">✨背景を変更する初級魔法✨<br>
-                ビルダーだけだと"webp"が使用できませんが、コードを使えば使えます。</span></td>
+                *ビルダーだけだと"webp"が使用できませんが、コードを使えば使えます。</span></td>
+            </tr>
+            <td>[tb_start_tyrano_code]<br>
+                [bg  time="0"  method="fadeIn"  storage="sample.webp"  ]<br>
+                [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨背景を変更する初級魔法✨<br>
+                *ビルダーだけだと"webp"が使用できませんが、コードを使えば使えます。</span></td>
             </tr>
             <tr>
             <td>[tb_start_tyrano_code]<br>
