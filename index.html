@@ -1130,11 +1130,30 @@
                 <td><span class="key">✨バグ回避魔法✨</span></td>
             </tr>
             <tr>
-            <td>[nowait] <br>
+            <td>[nowait]<br>
                 瞬時表示<br>
                 [wait_cancel]</td>
                 <td><span class="key">✨テキストを瞬間表示する魔法✨</span></td>
             </tr>  
+            <tr>
+            <td>[eval exp="sf.sample = '1'"]</td>
+                <td><span class="key">✨システム変数を宣言する魔法✨<br>*"f.sample"にすれば通常変数です</span></td>
+            </tr>
+            <tr>
+            <td>[tb_start_tyrano_code]<br>
+                [if exp=" sf.sample==1"]<br>
+                [jump storage="scene1.ks" target="*a"]<br>
+                [endif]<br>
+                [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨システム変数を使い分岐させる魔法✨<br>*"f.sample"にすれば通常変数です<br></span></td>
+            </tr>
+            <td>[tb_start_tyrano_code]<br>
+                [if exp=" f.w == 0 && f.x == 2" && f.y > 5 && f.z < 5"]<br>
+                [jump storage="scene1.ks" target="*a"]<br>
+                [endif]<br>
+                [_tb_end_tyrano_code]</td>
+                <td><span class="key">✨複数条件で分岐させる魔法✨<br>*"sf.sample"にすればシステム変数です（システム変数の複数条件はあまり使わないですので参考程度）<br></span></td>
+            </tr> 
             <tr>
             <td>[tb_start_tyrano_code]<br>
             [button target=*1 enterimg="sample2.png" clickimg="sampler2.png" graphic="sample1.png" width="92"  height="22"  x="250"  y="124" ]<br>
