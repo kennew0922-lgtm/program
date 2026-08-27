@@ -696,6 +696,35 @@
                     </tbody>
     </table>
 
+            <div class="section-title-yellow">リンククリック効果音テンプレート</div>
+
+       <table>
+        <tbody>
+            <tr>
+                <td>
+&lt!-- リンクとaudio要素の配置（ここはHTML） --&gt<br>
+&lta href="https://example.com" id="sound">&lt/a&gt<br>
+&ltaudio id="click" preload="auto"&gt<br>
+  &ltsource src="sound.mp3" type="audio/mp3"&gt<br>
+&lt/audio><br>
+<br>
+&lt!-- ここがJavaScript --&gt<br>
+&ltscript&gt<br>
+  const link = document.getElementById('sound');<br>
+  const sound = document.getElementById('click');<br>
+<br>
+  link.addEventListener('click', (e) => {<br>
+    sound.currentTime = 0; <br>
+    sound.play();<br>
+  });<br>
+&lt/script&gt<br>
+
+</td>
+<td><span class="key">🎵 JavaScriptと併用で音を慣らす魔法 🎵</span></td>
+</tr>  
+                    </tbody>
+    </table>
+
 
     <div class="section-title-yellow">PRACTICAL JAVASCRIPT CODE 1 【サイドバー/フローティングUI】テンプレート</div>
 
