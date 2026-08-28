@@ -712,10 +712,10 @@
             <td>
                 &lt;!-- 1. 音源の配置（IDをユニークにする） --&gt;<br>
                 &lt;audio id="magic" preload="auto"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="magic20.mp3" type="audio/mp3"&gt;<br>
+                &lt;source src="magic20.mp3" type="audio/mp3"&gt;<br>
                 &lt;/audio&gt;<br>
                 &lt;audio id="click" preload="auto"&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="magic23.mp3" type="audio/mp3"&gt;<br>
+                &lt;source src="magic23.mp3" type="audio/mp3"&gt;<br>
                 &lt;/audio&gt;<br>
                 <br>
                 &lt;!-- 2. リンクの配置（classを統一し、data-soundに鳴らしたいIDを指定） --&gt;<br>
@@ -724,17 +724,17 @@
                 <br>
                 &lt;!-- 3. 音を鳴らすJavaScript（HTMLを増やしてもこのまま共通で使える） --&gt;<br>
                 &lt;script&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;const soundLinks = document.querySelectorAll('.play-sound');<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;soundLinks.forEach(link =&gt; {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link.addEventListener('click', () =&gt; {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const soundId = link.getAttribute('data-sound');<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const audio = document.getElementById(soundId);<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (audio) {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio.currentTime = 0;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio.play().catch(e =&gt; console.log("Audio play blocked:", e));<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                const soundLinks = document.querySelectorAll('.play-sound');<br>
+                soundLinks.forEach(link =&gt; {<br>
+                link.addEventListener('click', () =&gt; {<br>
+                const soundId = link.getAttribute('data-sound');<br>
+                const audio = document.getElementById(soundId);<br>
+                if (audio) {<br>
+                udio.currentTime = 0;<br>
+                audio.play().catch(e =&gt; console.log("Audio play blocked:", e));<br>
+                }<br>
+                });<br>
+                });<br>
                 &lt;/script&gt;
             </td>
             <td><span class="key">🎵 JavaScriptと併用で音を鳴らす魔法 🎵</span></td>
