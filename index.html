@@ -706,149 +706,42 @@
 
             <div class="section-title-yellow">リンククリック効果音テンプレート</div>
 
-       <table>
-        <tbody>
-            <tr>
-                <td>
-&lt!-- リンクとaudio要素の配置（ここはHTML） --&gt<br>
-&lta href="https://example.com" id="sound">&lt/a&gt<br>
-&ltaudio id="click" preload="auto"&gt<br>
-  &ltsource src="sound.mp3" type="audio/mp3"&gt<br>
-&lt/audio><br>
-<br>
-&lt!-- ここがJavaScript --&gt<br>
-&ltscript&gt<br>
-  const link = document.getElementById('sound');<br>
-  const sound = document.getElementById('click');<br>
-<br>
-  link.addEventListener('click', (e) => {<br>
-    sound.currentTime = 0; <br>
-    sound.play();<br>
-  });<br>
-&lt/script&gt<br>
+<table>
+    <tbody>
+        <tr>
+            <td>
+                &lt;!-- 1. 音源の配置（IDをユニークにする） --&gt;<br>
+                &lt;audio id="magic" preload="auto"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="magic20.mp3" type="audio/mp3"&gt;<br>
+                &lt;/audio&gt;<br>
+                &lt;audio id="click" preload="auto"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="magic23.mp3" type="audio/mp3"&gt;<br>
+                &lt;/audio&gt;<br>
+                <br>
+                &lt;!-- 2. リンクの配置（classを統一し、data-soundに鳴らしたいIDを指定） --&gt;<br>
+                &lt;a href="https://example.com" class="play-sound" data-sound="magic"&gt;リンク1&lt;/a&gt;<br>
+                &lt;a href="https://example.com" class="play-sound" data-sound="click"&gt;リンク2&lt;/a&gt;<br>
+                <br>
+                &lt;!-- 3. 音を鳴らすJavaScript（HTMLを増やしてもこのまま共通で使える） --&gt;<br>
+                &lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;const soundLinks = document.querySelectorAll('.play-sound');<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;soundLinks.forEach(link =&gt; {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link.addEventListener('click', () =&gt; {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const soundId = link.getAttribute('data-sound');<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const audio = document.getElementById(soundId);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (audio) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio.currentTime = 0;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio.play().catch(e =&gt; console.log("Audio play blocked:", e));<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                &lt;/script&gt;
+            </td>
+            <td><span class="key">🎵 JavaScriptと併用で音を鳴らす魔法 🎵</span></td>
+        </tr>  
+    </tbody>
+</table>
 
-</td>
-<td><span class="key">🎵 JavaScriptと併用で音を慣らす魔法 🎵</span></td>
-</tr>  
-                    </tbody>
-    </table>
-
-
-    <div class="section-title-yellow">PRACTICAL JAVASCRIPT CODE 1 【サイドバー/フローティングUI】テンプレート</div>
-
-       <table>
-        <tbody>
-            <tr>
-                <td>
-.side-menu-container {<br>
-  /* position: fixed; 画面の端にピタッと張り付く魔法 */<br>
-  position: fixed;<br>
-  
-  /* right: 0; 画面の右端からの距離。left: 0; にすれば左側に移動！ */<br>
-  right: 0;<br>
-  
-  /* top: 100px; 上端からの距離 */<br>
-  top: 100px;<br>
-  
-   /* メニューの横幅 */<br>
-  width: 250px;<br>
-  
-  /* transition: 動きのスピードを設定。0.3sは0.3秒かけて動くという意味 */<br>
-  transition: all 0.3s ease; <br>
-  
-  /* z-index: 1000; 重なり順。他のメニューより手前にしたい時は大きくしてね */<br>
-  z-index: 1000;<br>
-}<br>
-
-.menu-item {<br>
-  /* display: block; 縦に積み重なるように表示する設定 */<br>
-  display: block;<br>
-
-  /* ボタンの文字の周りの広さ */<br>
-  padding: 15px; <br>
-
-  /* 薄い半透明の背景色 */<br>
-  background: rgba(255, 255, 255, 0.1); <br>
-  /* 下側の区切り線 */<br>
-  border-bottom: 1px solid #444; <br>
-  color: white;<br>
-  text-decoration: none;<br>
-}<br>
-
-/* --- マウスを乗せると色が変わる！ --- */<br>
-.menu-item:hover {<br>
-  background: rgba(0, 200, 255, 0.5); /* マウスを乗せると青く光る */<br>
-}<br>
-</td>
-                <td><span class="key">✨ 常にそばにいる「サイドバー」魔法陣 ✨</span></td>
-            </tr>     
-                    </tbody>
-    </table>
-
-
- <div class="section-title-yellow">PRACTICAL JAVASCRIPT CODE 2 【サイドバー/フローティングUI】テンプレート</div>
-
-       <table>
-        <tbody>
-            <tr>
-                <td>
-.modal-overlay {<br>
-  /* position: fixed; 画面全体を覆い尽くす魔法 */<br>
-  position: fixed;<br>
-  
-  /* inset: 0; 上下左右すべて0にすることで、画面いっぱいに広げます */<br>
-  inset: 0;<br>
-  
-  /* 背景を暗くする魔法 */<br>
-  background: rgba(0, 0, 0, 0.6);<br>
-  
-  /* display: flex; 中身（モーダル本体）を綺麗に真ん中に配置するセット */<br>
-  display: flex;<br>
-  justify-content: center;<br>
-  align-items: center;<br>
-  
-  /* z-index: 1000; メニューよりもさらに手前に出したい時は数字を大きくしてね */<br>
-  z-index: 1000;<br>
-}<br>
-
-.modal-content {<br>
-  /* position: relative; 中にある「閉じるボタン」を配置するための基準 */<br>
-  position: relative;<br>
-  /* パネルの中の色 */<br>
-  background: #fff; <br>
-  /* 画面幅の80％を使う */<br>
-  width: 80%; <br> 
-  /* ただし最大でも500pxまで */  <br>   
-  max-width: 500px; <br>
-   /* 親要素との距離 */<br>
-  padding: 30px;<br>
-  /* 角を丸くして優しくする */<br>
-  border-radius: 12px; <br>
-  
-  /* 影をつける魔法（立体感が出ます！） */<br>
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);<br>
-}<br>
-
-.close-trigger {<br>
-  /* 親（modal-content）の右上に配置　*起点の設定 */<br>
-  position: absolute;<br>
-  /* 起点の高さ */<br>
-  top: 10px;<br>
-  /* 起点の位置 */<br>
-  right: 15px;<br>
-  
-  cursor: pointer; /* マウスを乗せると指の形になる */<br>
-  font-size: 20px;<br>
-}
-
-/* --- マウスを乗せると色が変わる！ --- */<br>
-.menu-item:hover {<br>
-  background: rgba(0, 200, 255, 0.5); /* マウスを乗せると青く光る */<br>
-}<br>
-<td><span class="key">✨ 真ん中に浮かぶ「モーダル」魔法陣 ✨</span></td>
-            </tr>  
-                                </tbody>
-    </table>   
 
     <br><br><br><br>
 
