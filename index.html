@@ -539,80 +539,64 @@
     </table>
 
 
-    <div class="section-title-yellow">PRACTICAL CSS CODE 【万能レイヤー配置】フル機能テンプレート</div>
+    <div class="section-title-yellow">WordPessの&ltp&gtタグ自動挿入の悪夢を消す魔法のCSSコード</div>
 
      <table>
         <tbody>
             <tr>
                 <td>
-.socrarius-wrapper {<br>
-  /* position: fixed; 画面のスクロールに影響されず、ずっとそこに張り付く配置魔法 */<br>
-  position: fixed;<br>
-  
-  /* top: 0; 画面の一番上からスタート（bottom: 0; に変えれば下端からになります） */<br>
-  top: 0;<br>
-  
-  /* left: 0; 画面の左端からスタート（right: 0; に変えれば右端からになります） */<br>
-  left: 0;<br>
-  
-  /* width: 100vw; 画面の横幅いっぱいに広げる（pxで指定すれば固定幅になります） */<br>
-  width: 100vw; <br>
-  
-  /* height: 100vh; 画面の縦幅いっぱいに広げる（pxで指定すれば固定の高さになります） */<br>
-  height: 100vh;<br>
-  
-  /* pointer-events: none; この透明な壁をマウスが通り抜けて、下のボタンを押せるようにする魔法 */<br>
-  pointer-events: none; <br>
-  
-  /* z-index: 1000; 重なり順。数字が大きいほど手前に出ます。1増やすと1つ手前に！ */<br>
-  z-index: 1000; <br>
+/* 🌸 WordPressの自動挿入タグ（p, figure）による上の隙間だけをピンポイント撃破！ */<br>
+.memory-card p,<br>
+.memory-card figure {<br>
+    margin: 0 !important;<br>
+    padding: 0 !important;<br>
+    line-height: 0 !important; /* 行高による下の隙間もまとめて消去！ */<br>
+    font-size: 0 !important;<br>
 }<br>
-
-/* --- UIパネルコンテナ（ここにボタンなどを並べます） ---*/<br>
-
-.socrarius-panel {<br>
-  /* position: absolute; 親（wrapper）の中での位置を決める配置魔法 */<br>
-  position: absolute;<br>
-  
-  /* top: 50%; left: 50%; transform: translate(-50%, -50%); <br>
-     これでどんな画面サイズでも必ず中心に配置されます */<br>
-  top: 50%;<br>
-  left: 50%;<br>
-  transform: translate(-50%, -50%);<br>
-  
-  width: 400px; /* パネルの横幅（pxで自由に変えてね！） */<br>
-  background: rgba(0, 0, 0, 0.8); /* 黒くて透ける背景色（最後の0.8を0〜1で変えると透明度が変わるよ） */<br>
-  border: 1px solid #fff; /* 白い枠線 */<br>
-  padding: 20px; /* 内側の余白 */v
-  
-  /* pointer-events: auto; パネル自体はクリックできるようにする設定 */<br>
-  pointer-events: auto; <br>
-  
-  border-radius: 8px; /* 角を丸くする魔法 */<br>
+<br>
+/* 🌸 画像自体もブロック要素化して上端にピッタリ配置 */<br>
+.memory-card img {<br>
+    margin: 0 !important;<br>
+    padding: 0 !important;<br>
+    vertical-align: top !important;<br>
 }<br>
-
-/* --- ボタンを並べるためのグループ ---*/<br>
-.button-group {<br>
-  /* display: flex; 子要素（ボタン）を横に並べるための最強の魔法 */<br>
-  display: flex;<br>
-  
-  /* justify-content: space-between; ボタン同士の間隔を均等にする設定 */<br>
-  justify-content: space-between;<br>
-  
-  margin-top: 15px; /* 上の要素との隙間 */<br>
+<br>
+/* 🔥 WordPressの空<p>による「箱の上の空白」撃破 */<br>
+.archive-container > p,<br>
+.archive-container p:empty,<br>
+.entry-content > p:empty,<br>
+.entry-content > p:has(.memory-card) {<br>
+    margin: 0 !important;<br>
+    padding: 0 !important;<br>
+    height: 0 !important;<br>
+    line-height: 0 !important;<br>
+    font-size: 0 !important;<br>
+    border: none !important;<br>
 }<br>
-
-.action-btn {<br>
-  /* position: relative; 基本の配置。子要素を少しずらしたい時に使います */<br>
-  position: relative; <br>
-  
-  padding: 10px 20px; /* ボタンの大きさ */<br>
-  cursor: pointer; /* マウスを乗せると指の形になる */<br>
+<br>
+/* 空のp自体を消す */<br>
+.archive-container > p:empty,<br>
+.entry-content > p:empty {<br>
+    display: none !important;<br>
+}<br>
+<br>
+/* pでカードが包まれている場合、包み紙の余白をゼロにする */<br>
+.entry-content p:has(.memory-card),<br>
+.archive-container p:has(.memory-card) {<br>
+    display: contents !important; /* pを透明化してGridの子扱いにする */<br>
+    margin: 0 !important;<br>
+    padding: 0 !important;<br>
+}<br>
+<br>
+/* コンテナ自体の上余白も念のためゼロ */<br>
+.archive-container {<br>
+    margin-top: 0 !important;<br>
+    padding-top: 0 !important;<br>
 }<br>
 </td>
                 <td><span class="key">
-✨魔法陣の基本設計図✨<br>
-✨数値を変えるだけで、好きな場所にUIを召喚✨</span></td>
+これでWordPess特有の&ltp&gtの悪夢から<br>解放♪<br>
+*クラスはサンプルです</span></td>
             </tr>     
                     </tbody>
     </table>
