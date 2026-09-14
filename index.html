@@ -538,6 +538,41 @@
                     </tbody>
     </table>
 
+<br>
+
+    <div class="section-title-yellow">インラインCSS</div>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    [html]<br><br>
+                    &ltspan style="color: yellow; font-size: 16px; font-weight: bold;"&gt文字&lt/span&gt
+                </td> 
+                     <td>
+                        <span class="key">
+外部のCSSファイルに書かずに、HTMLのタグの中に style="..." と直接書いて、その場所だけ自由自在にデザインを変えられる便利な魔法<br><br>htmlの場合は簡単♪</span>
+                    </td>
+            </tr>  
+            <td>
+                [javascript]<br><br>
+                    // パターンA：外側が「"」、内側は「'」<br>
+                    const text1 = "で、&ltspan style='color: yellow;'&gt超重要&lt/span&gt";<br><br>
+                    // パターンB：外側が「'」、内側は「"」<br>
+                    const text2 = 'で、&ltspan style="color: yellow;"&gt超重要&lt/span&gt';<br><br>
+                    // パターンC：バッククォーツ「`」なら、中でどちらを使ってもOK（おすすめ）<br>
+                    const text3 = `で、&ltspan style="color: yellow;"&gt超重要&lt/span&gt`;<br><br>
+
+                </td> 
+                     <td>
+                        <span class="key">
+外部のCSSファイルに書かずに、HTMLのタグの中に style="..." と直接書いて、その場所だけ自由自在にデザインを変えられる便利な魔法<br><br>JavaScriptの文字列（テキスト）の中にインラインCSSを混ぜるときは、「シングルクォーテーション ' とダブルクォーテーション " のバッティング」が発生するとバグるので注意が必要<br><br>でも要点を押さえればJavaScript内に簡単に書けるから超便利♪</span>
+                    </td>
+            </tr>     
+                    </tbody>
+    </table>
+
+<br>
 
     <div class="section-title-yellow">WordPessの&ltp&gtタグ自動挿入の悪夢を消す魔法のCSSコード</div>
 
