@@ -221,12 +221,76 @@
         }
 
 
+        /* 🌸 控えめでスタイリッシュな画像ディスプレイBOX2 */
+        .image-box {
+        position: relative;
+        display: inline-block; /* 画像のサイズにフィット */
+        max-width: 80%; /* クリエイターガイド画像（guide-img）のサイズ感をそのまま維持 */
+        margin: 10px 0;
+        padding: 8px; /* 枠と画像の間の程よい隙間 */
+        background: rgba(0, 15, 30, 0.6); /* 暗めのシースルー背景 */
+        border: 1px solid rgba(0, 242, 254, 0.25); /* 主張しすぎない薄いサイバーブルー枠 */
+        border-radius: 6px;
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.08), inset 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+       }
+
+        /* ホバーした時にほんのり魔法の輝きが増す演出 */
+        .image-box:hover {
+        border-color: rgba(0, 242, 254, 0.5);
+        box-shadow: 0 0 20px rgba(0, 242, 254, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 四隅の近未来風コーナーアクセント（控えめな装飾） */
+        .image-box::before,
+        .image-box::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-color: #00f2fe;
+        border-style: solid;
+        pointer-events: none;
+        }
+
+        /* 左上コーナー */
+        .image-box::before {
+        top: -1px; left: -1px;
+        border-width: 2px 0 0 2px;
+        }
+
+        /* 右下コーナー */
+        .image-box::after {
+        bottom: -1px; right: -1px;
+        border-width: 0 2px 2px 0;
+        }
+
+        /* BOX内部の画像設定（元のguide-imgクラスを活かします） */
+        .image-box img.guide-img {
+        width: 100% !important; /* BOXにぴったりフィット */
+        height: auto;
+        display: block;
+        border-radius: 3px;
+        }
+
+
                 /* カスタムスクロールバー */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: #345485; }
     </style>
 </head>
 <body>
+
+        <!-- 1. 音源の配置（IDをユニークにする） -->
+    <audio id="magic" preload="auto">
+    <source src="https://socrarius-tool.com/launcher/magic23.mp3" type="audio/mp3">
+    </audio>
+    <audio id="click" preload="auto">
+    <source src="https://socrarius-tool.com/launcher/magic20.mp3" type="audio/mp3">
+    </audio>
+    <audio id="ami" preload="auto">
+    <source src="https://socrarius-tool.com/launcher/ami.mp3" type="audio/mp3">
+    </audio>
 
     <div class="system-banner">
         PROGRAM CODE DICTIONARY
@@ -972,6 +1036,87 @@
                     </tbody>
     </table>
     <br><br>
+
+    <div class="section-title">BATCH CODE</div>
+<a href="https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner14.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+<tr>
+                <td>rem コメント または :: コメント</td>
+                <td><span class="key">1行コメント。<br>バッチファイル内でメモを残す記述です。</span></td>
+            </tr>
+            <tr>
+                <td>@echo off<br>chcp 65001 > nul</td>
+                <td><span class="key">コマンド非表示。<br>実行時に余計なコマンド文字列を表示せず、結果だけをスッキリ見せるお約束文句です。<br>"chcp 65001 > nul"をすぐ下につけると3バイト文字の文字化けを防止できます。</span></td>
+            </tr>
+            <tr>
+                <td>echo メッセージ</td>
+                <td><span class="key">画面表示。<br>黒い画面（コマンドプロンプト）に指定した文字列を表示します。</span></td>
+            </tr>
+            <tr>
+                <td>echo メッセージ</td>
+                <td><span class="key">画面表示。<br>黒い画面（コマンドプロンプト）に指定した文字列を表示します。</span></td>
+            </tr>
+            <tr>
+                <td>pause</td>
+                <td><span class="key">一時停止。<br>「続行するには何かキーを押してください...」と表示して処理を止め、画面が勝手に閉じるのを防ぎます。</span></td>
+            </tr>
+            <tr>
+                <td>set 変数名=値</td>
+                <td><span class="key">変数宣言。<br>データを保存する箱を作ります。呼び出す時は %変数名% と％で囲みます。</span></td>
+            </tr>
+            <tr>
+                <td>start ファイル名/URL</td>
+                <td><span class="key">起動・開く。<br>アプリを実行したり、指定したファイルやWebサイトを既定のブラウザで開きます。</span></td>
+            </tr>
+            <tr>
+                <td>timeout /t 秒数</td>
+                <td><span class="key">カウントダウン待機。<br>指定した秒数だけ処理を一時待機（ウェイト）させます。</span></td>
+            </tr>
+           
+                    </tbody>
+    </table>
+    <br><br>
+
+        <div class="section-title">AUTOHOTKEY CODE</div>
+<a href="https://ja.wikipedia.org/wiki/AutoHotkey" target="_blank" rel="noopener noreferrer" ><img src="https://socrarius-tool.com/program/banner14.png" width="720px"><a>
+<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>; コメント</td>
+                <td><span class="key">1行コメント。<br>AutoHotkeyのコメントアウトは「;（セミコロン）」を使います。</span></td>
+            </tr>
+            <tr>
+                <td>/* ... */</td>
+                <td><span class="key">複数行（ブロック）コメント</span></td>
+            </tr>
+            <tr>
+                <td>キー::動作（例：a::b）</td>
+                <td><span class="key">ホットキー（キーリマップ）。<br>「Aを押したらBを入力する」といったキーの付け替えを行います。</span></td>
+            </tr>
+            <tr>
+                <td>::省略語::正式名称</td>
+                <td><span class="key">ホットストリング（自動置換）。<br>特定文字列を入力した瞬間に長文や定型文へ一発変換します。</span></td>
+            </tr>
+            <tr>
+                <td>Send, 文字列やキー</td>
+                <td><span class="key">キー送信。<br>キーボードで文字を直接タイピングしたかのような自動操作を行います。</span></td>
+            </tr>
+            <tr>
+                <td>Run, ファイルパス/URL</td>
+                <td><span class="key">プログラム・URL実行。<br>アプリの起動やフォルダ・Webサイトを一瞬で開きます。</span></td>
+            </tr>
+            <tr>
+                <td>MsgBox, メッセージ</td>
+                <td><span class="key">ポップアップ表示。<br>画面上にメッセージボックスをぽんっと表示させて通知します。</span></td>
+            </tr>
+           
+                    </tbody>
+    </table>
+    <br><br>
+
             <div class="end-title">【重要】（基本的に）プログラムコードは後ろに記述したコードが優先されます</div>
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -1264,6 +1409,15 @@
     </tbody>
 </table>
 
+<br><br>
+
+<div class="section-title">Concept-Embedded Explainable AI Model</div>
+<!-- The "You" approach to idea generation—as practiced by an SE-->
+<a href="https://github.com/mr-eight-8shi/concept-xai" target="_blank" rel="noopener noreferrer" class="play-sound" data-sound="magic">
+    <img src="https://socrarius-tool.com/program/yuu_spell.png" class="image-box">
+    </a>
+
+
 <br><br><br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br><br><br>
@@ -1505,10 +1659,10 @@
     <div class="sao-corner br"></div>
     <div class="sao-scanline"></div>
     <div class="sao-tag">MESSAGE TO ALL CREATORS</div>
-   
-    <!-- ケンくんの無限大ループ動画 -->
-    <a href="https://socrarius-tool.com/MovieMagic/" class="hidden-door">
-    <img src="https://socrarius-tool.com/program/mesage.webp" class="sao-movie-content">
+    
+    <!-- 💡 class="hidden-door play-sound" と1つにまとめました！ -->
+    <a href="https://socrarius-tool.com/MovieMagic/" class="hidden-door play-sound" data-sound="magic">
+        <img src="https://socrarius-tool.com/program/mesage.webp" class="sao-movie-content">
     </a>
 </div>
 <style>
@@ -1623,6 +1777,19 @@
         });
 
     }); // 🌸 安全装置の閉じ
+
+     //3. 音を鳴らすJavaScript（HTMLを増やしてもこのまま共通で使える）
+    const soundLinks = document.querySelectorAll('.play-sound');
+    soundLinks.forEach(link => {
+    link.addEventListener('click', () => {
+    const soundId = link.getAttribute('data-sound');
+    const audio = document.getElementById(soundId);
+    if (audio) {
+    audio.currentTime = 0;
+    audio.play().catch(e => console.log("Audio play blocked:", e));
+    }
+    });
+    });
 </script>
 
 
